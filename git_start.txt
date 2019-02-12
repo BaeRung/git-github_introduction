@@ -1,0 +1,33 @@
+<<Git>>
+
+#git 잘설치되었는지 확인(git 버전확인명령)
+git --version
+
+#git 기본 설정
+ *git 설치 후 사용자정보 등록해야함
+git config --global user.name "내이름"
+git config --global user.email "내이메일"
+
+#작업중인 파일(ex : a.txt) commit 기본 순서 
+그 파일이 있는 곳으로 cd -> git init -> (touch a.txt) ->git add a.txt ->git commit -m "first command"
+ *git init : 이 파일을 관리하겠다!
+
+#변경된 내용 확인
+git status
+
+#이때까지 한 기록확인
+git log
+
+#git
+[working directory] --git add--> [staging area] --git commit--> [repository]
+
+#보통 순서
+init했다는 가정하에
+git status (unstacted로 나옴 - red색으로)
+git add 파일이름(확장자 포함)
+git status (초록색으로 바뀜)
+git commit -m "start project"(-m : message)
+git status(commit할 사항이 없다고 뜸)
+파일수정
+git status (modified : ~)
+git add . (. : 현재 디렉토리)
