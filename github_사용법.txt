@@ -1,0 +1,34 @@
+<<github>>
+
+*git : 내컴퓨터안에서 버전관리
+ github : git 서버에서 버전관리
+
+*clone : 프로젝트 통째로 다운받기
+ pull : clone받은 곳에서 추가적으로 다운로드하는 것
+ push : 내 컴퓨터에서 추가 commit한 내용을 업로드하는 것
+
+1. new repository(저장소)만들기
+2. HTTPS로 바꿈(ssh에서)
+3. 밑에꺼 한줄씩 복사해서 붙여넣기
+git remote add origin https://github.com/BaeRung/study_jam_yujin.git
+git push -u origin master
+(대략 이런식으로 되어있는걸 복사하면됨 이걸 그대로 복사하라는게 아님)
+ *git@github.com: Permission denied (publickey).
+  fatal: Could not read from remote repository.
+ -> 이런 오류나는 이유? 등록안된 기기라서 그렇다
+ -> 해결 : ssh키를 새로 생성하기
+터미널에서)
+1)ssh-keygen -t rsa -C "git이메일" ->계속enter치기
+2)your public key has been saved in "경로"
+ ->경로 복사하기
+ * 이 경로에 내 public key가 생성되었다는 것임. 이 경로로 가야하지만 cd로는 file이나directory가 아니라서 못간다고 함.
+   내용을 읽어야 하므로 cat을 쓴다
+3) cat "경로"
+4) 내용 전부 복사하기
+5) 내 git의 settings에 감
+6) SSH and GPG keys클릭
+7) new ssh key선택
+8) title에 이것은 무슨 기기인지 적는다. 그후 key에 복사했던 것을 붙여넣기함
+9)밑의 add ssh key눌러줌
+
+출처: https://zeddios.tistory.com/120 [ZeddiOS]
